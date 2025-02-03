@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-4</title>
+</head>
+
+<body>
+   <h2>Задача 4. </h2>
+   <h3></h3>
+   <p>
+      З клавіатури вводиться вік людини. Вивести на екран ким він
+      є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).
+   </p>
+
+   <script>
+      let ageNum = parseInt(prompt(`Введіть вік людини`))
+      ageNum = Math.ceil(ageNum); //Заокругляю  якщо число з комою
+      if (ageNum < 110 && ageNum > 0) {
+         if (ageNum > 0 && ageNum <= 6)
+            document.write(`<h3>у садочку</h3>`);
+         else if (ageNum > 6 && ageNum <= 16)
+            document.write(`<h3>школяр</h3>`)
+         else if (ageNum > 16 && ageNum <= 25)
+            document.write(`<h3>студент</h3>`)
+         else if (ageNum > 25 && ageNum <= 65)
+            document.write(`<h3>працюєте</h3>`);
+         else document.write(`<h3>пенсіонер</h3>`);
+      } else
+         document.write(`<h3>Некорректно введений вік</h3>`);
+
+   </script>
+</body>
+
+</html>

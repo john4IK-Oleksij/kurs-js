@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Lesson-03</title>
+</head>
+
+<body>
+   <script>
+      // const num1 = parseInt(prompt(`Перше число`, `3.14`));
+      // const num2 = parseInt(prompt(`Друге число`, `1.5`));
+      // const sum = num1 + num2;
+      // const divis = num1 / num2
+      // const mult = num1 * num2
+      // document.write(`сумa = ${sum}<br>`);
+      // document.write(`часткa = ${divis}<br>`);
+      // document.write(`добуток = ${mult}`);
+      //Лінійні алгоритми
+      //крок 0: позначення
+      //крок 1: Введення необхідних даних
+      //крок 2: обчислення
+      //крок 3: виведення  результатів
+      // ----------------
+      // const money = parseFloat(prompt(`ile masz pieniedzy?`))
+      // const coins = 215
+      // if (money >= coins) {
+      //    document.write(`Mozna kupuvaty`);
+      // }
+      // else {
+      //    document.write(`Ne masz wystarczająco  pieniedzy`);
+      // }
+      // +++++++++++++++
+      //крок 0: позначення
+      // const age = parseInt(prompt(`Vvedit svij vik`))
+      // const minAge = 18
+      // //крок 2: обчислення
+      // if (age < minAge)
+      //    document.write(`Dostup zaboroneno`);
+      // else
+      //    document.write(`Vitajemo v naszomu banku!`);
+      //крок 1: Введення необхідних даних
+      //крок 2: обчислення
+      //крок 3: виведення  результатів
+      // +++++++++++++
+      // let firstNum = parseInt(prompt(`vvedit czyslo 1`))
+      // let secondNum = parseInt(prompt(`vvedit czyslo 2`))
+      // if (firstNum > secondNum) {
+      //    firstNum = 0
+      //    document.write(`Czyslo 2 bilsze bo teper chyslo 1 je 0`);
+      // }
+      // else {
+      //    secondNum = 0
+      //    document.write(`Czyslo 1 bilsze bo teper chyslo 2 je 0`);
+      // }
+      // ++++++++++++++++++++
+      // const age = parseInt(prompt(`vvedit svij vik`))
+      // const ageLimitMin = 32
+      // const ageLimitMax = 45
+      // if (ageLimitMax > age && age >= ageLimitMin)
+      //    document.write(`My radi pryjniaty vas na robotu`);
+      // else document.write(`Na zal - vy ne vidpovidajete nashym vymoham`);
+      // =========================== ternarnyj operator ============
+      // const age = parseInt(prompt(`vvedit svij vik`))
+      // const ageLimitMin = 32
+      // const ageLimitMax = 45
+      // ageLimitMax > age && age >= ageLimitMin ? document.write(`My radi pryjniaty vas na robotu`) :
+      //    document.write(`Na zal - vy ne vidpovidajete nashym vymoham`)
+      // ==================================
+      // Вводиться оцінка-цифра. Вивести оцінку прописом(Відмінно , Добре, Задовільно, Незадовільно )
+      // const score = parseInt(prompt(`Введіть оцінку від 1 до 5`));
+      // if (score === 5) document.write(`Відмінно`)
+      // else if (score === 4) document.write(`Добре`)
+      // else if (score === 3) document.write(`Задовільно`)
+      // else document.write(`Незадовільно`)
+      //  ================= switch ==
+      // Вводиться оцінка-цифра. Вивести оцінку прописом(Відмінно , Добре, Задовільно, Незадовільно )
+      // const score = parseInt(prompt(`Введіть оцінку від 1 до 5`));
+      // let result;
+      // switch (score) {
+      //    case 1:
+      //    case 2: result = "Незадовільно"
+      //       break
+      //    case 3: result = "Задовільно"
+      //       break
+      //    case 4: result = "Добре"
+      //       break
+      //    case 5: result = "Відмінно"
+      //       break
+      //    default: result = "Некоректна оцінка" // Додаємо обробку неправильних вводів
+      // }
+      // document.write(result);
+      // ===================
+      //З клавіатури вводиться номер місця яке зайняв спортсмен. Вивести на екран - яку медаль отримав спортсмен (Золота, Срібна , Бронзова ).
+      // const placeNum = parseInt(prompt(`Введите номер місця яке зайняв переможець`))
+      // let prize
+      // switch (placeNum) {
+      //    case 3: prize = "Це БРОНЗОВА медаль"
+      //       break;
+      //    case 2: prize = `Це СРІБНА  медаль`
+      //       break;
+      //    case 1: prize = `Це ЗОЛОТА медаль`
+      //       break;
+      //    default: prize = `Помилка. Введено некоректне число `
+      //       break;
+      // }
+      // document.write(prize);
+      // ==========================
+      //З клавіатури вводиться колір помідора. Визначити чи він придатний до споживання( Можна їсти, Не можна їсти , недозрілий, Не можна їсти , перестиглий .)
+      // const colorText = prompt(`Будь Ласка оберiть колір:(red, green, czy inne)`)
+      // let tomatoState
+      // switch (colorText) {
+      //    case `red`: tomatoState = `Можна їсти`
+      //       break;
+      //    case `green`: tomatoState = `Не можна їсти , недозрілий`
+      //       break;
+      //    default: tomatoState = `Не можна їсти`
+      //       break;
+      // }
+      // document.write(tomatoState);
+      // ===================
+      // Znaity naimenshe sered dodatnih
+      //  1. Отримуємо три числа від користувача через prompt і перетворюємо їх на числа
+      // let a = parseFloat(prompt(`a=`)); // Запитуємо число a
+      // let b = parseFloat(prompt(`b=`)); // Запитуємо число b
+      // let c = parseFloat(prompt(`c=`)); // Запитуємо число c
+      // // 2. Ініціалізуємо змінну min значенням Infinity (нескінченність),
+      // // щоб будь-яке реальне число було меншим за нього.
+      // let min = Infinity;
+      // // 3. Перевіряємо кожне число: якщо воно додатне і менше за поточне значення min,
+      // // то оновлюємо min на це число.
+      // if (a > 0 && a < min) min = a; // Якщо a > 0 і менше за min, то оновлюємо min
+      // if (b > 0 && b < min) min = b; // Якщо b > 0 і менше за min, то оновлюємо min
+      // if (c > 0 && c < min) min = c; // Якщо c > 0 і менше за min, то оновлюємо min
+      // // 4. Перевіряємо, чи знайшли ми якесь додатне число
+      // if (isFinite(min))
+      //    document.write(`min : ${min}`); // Якщо min змінився (не залишився Infinity), виводимо його
+      // else
+      //    document.write(`Додатніх нема`); // Якщо жодне число не було додатним, виводимо повідомлення
+      // ====================
+      //знайти найбільше серед тих які менші за середнє арифметичне
+      // let a = parseFloat(prompt(`a=`)); // Запитуємо число a
+      // let b = parseFloat(prompt(`b=`)); // Запитуємо число b
+      // let c = parseFloat(prompt(`c=`)); // Запитуємо число c
+      // let d = parseFloat(prompt(`d=`)); // Запитуємо число d
+      // const avg = (a + b + c + d) / 4  //середнє арифметичне
+      // let max = -Infinity
+      // if (a < avg && a > max) max = a;
+      // if (b < avg && b > max) max = b;
+      // if (c < avg && c > max) max = c;
+      // if (d < avg && d > max) max = d;
+      // // Виводимо результат
+      // if (max > -Infinity)
+      //    document.write(`max : ${max}`);
+      // else
+      //    document.write(`Немає чисел, менших за середнє`);
+      // ====================
+      //знайти 2 найбільших числа серед наданих 4
+      // let a = parseFloat(prompt(`a=`)); // Запитуємо число a
+      // let b = parseFloat(prompt(`b=`)); // Запитуємо число b
+      // let c = parseFloat(prompt(`c=`)); // Запитуємо число c
+      // let d = parseFloat(prompt(`d=`)); // Запитуємо число d
+      // let max1, max2 // 2 maksymalni chysla.
+      // if (a > b) {
+      //    max1 = b
+      //    max2 = a
+      // }
+      // else {
+      //    max1 = a
+      //    max2 = b
+      // }
+      // if (c > max2) {
+      //    max1 = max2
+      //    max2 = c
+      // }
+      // else if (c > max1) max1 = c
+      // if (d > max2) {
+      //    max1 = max2
+      //    max2 = d
+      // }
+      // else if (d > max1) max1 = d
+      // document.write(`<h3>З введених чисел ${a}, ${b}, ${c}, ${d} <br> максимальними числами є ${max1} i ${max2}</h3>`);
+      // =======================
+      //Вивести випадково одне з трьох зображень
+      // const randomNum = Math.floor(Math.random() * 3) + 1
+      // let link
+      // switch (randomNum) {
+      //    case 1:
+      //       link = `/lesson-03/img/img-02.jpg`
+      //       break;
+      //    case 2:
+      //       link = `/lesson-03/img/img-03.jpg`
+      //       break;
+      //    case 3:
+      //       link = `/lesson-03/img/img-04.jpg`
+      //       break;
+      // }
+      // document.write(`<img src="${link}" alt="image" style="width: 300px;">`);
+      // ==========================
+      // Морський бій (не обов”язкова). Ворожий корабель, може
+      // знаходитись в одному із квадратів (кількість квадратів вводиться з клавіатури), які розташовані лінійно
+      // (один за одним) на річці.
+      // Позиція корабля визначається комп’ютером випадковим чином.
+      // Гра відбувається за правилами:
+      // 1) якщо користувач стріляє у заданий квадрат (тобто вводиться номер квадрата), то корабель потоплено;
+      // 2) якщо корабель знаходиться у сусідньому по відношенню до квадрата, де знаходиться корабель, то корабель
+      // пошкоджено (про це повідомляємо користувача).
+      // За два постріли спробувати потопити корабель.
+   
+         // const cellsNum = parseInt(prompt(`Введіть кількість ячейок`))
+         // const shipsPosition = Math.floor(Math.random() * cellsNum) + 1
+         // const hit = shipsPosition === attack
+         // // Перевіряємо, чи постріл влучив або пройшов поряд
+         // if (hit) { //влучив
+         //    document.write(`h3>Вітаю! Корабель знищено </h3>`);
+         // } else //поряд 
+         //    else document.write(`<h3>Ви програли. Корабель вцілів ... </h3>`);//Не трапив 
+         // ==================
+         // const cellsNum = parseInt(prompt(`Введіть кількість ячейок:`));
+         // const shipsPosition = Math.floor(Math.random()
+         //    * cellsNum) + 1;
+         // const attack1 = parseInt(prompt(`Зроби постріл (Виберіть ячейку (від 1 до ${cellsNum}) де знаходиться корабель)`))
+         // const isNear = attack1 === shipsPosition + 1 || attack1 === shipsPosition - 1
+         // // Перевіряємо, чи постріл влучив 
+         // if (attack1 === shipsPosition) {
+         //    document.write(`<h3>Вітаю! Корабель знищено з першого пострілу!</h3>`);
+         // } else {  // Якщо перший постріл промахнувся, перевіряємо другий постріл
+         //    if (isNear) {
+         //       const attack2 = parseInt(prompt(`Корабель пошкоджено. Вибух поряд з кораблем. Зроби другий постріл (від 1 до ${cellsNum})`));
+         //       if (attack2 === shipsPosition)
+         //          document.write(`<h3>Вітаю! Корабель знищено з другого пострілу!</h3>`);
+         //       else
+         //          document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+         //    }
+         //    else document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+         //    if (attack2 === shipsPosition)
+         //       document.write(`<h3>Вітаю! Корабель знищено з другого пострілу!</h3>`);
+         //    else
+         //       document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+         // }
+   </script>
+   <wrapper>
+      <div>
+         <a target="_blank" href="index_copy_1.html">TASK 1. З клавіатури вводяться імена двох дітей та кількість у них
+            цукерок. Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або вивести, що кількість
+            однакова.</a>
+         <a target="_blank" href="index_copy_2.html">TASK 2. З клавіатури вводиться ціна товару і кількість грошей. Якщо
+            грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею
+            за 4 грн.</a>
+         <a target="_blank" href="index_copy_3.html">TASK 3. Випадковим чином генерується число від 1 до 5. Спробуйте
+            вгадати число за 2 спроби.</a>
+         <a target="_blank" href="index_copy_4.html">TASK 4. З клавіатури вводиться вік людини. Вивести на екран ким він
+            є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).</a>
+         <a target="_blank" href="index_copy_5.html">TASK 5. З клавіатури вводиться назва категорії водія (А-мотоцикл,
+            В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може
+            керувати.</a>
+         <a target="_blank" href="index_copy_6.html">TASK 6. З клавіатури вводиться номер дня тижня. Вивести на екран
+            назву дня.</a>
+         <a target="_blank" href="index_copy_7.html">TASK 7. З клавіатури вводиться номер місяця. Вивести до якої пори
+            року
+            він відноситься</a>
+         <!-- <a target="_blank" href="index_copy_8.html">TASK 8. Комп’ютер випадковим чином вибирає початок і кінець
+            проміжку (проміжок повинен знаходитися в межах від 1 до 100). Користувач вводить число і виграє, якщо число
+            знаходиться у цьому проміжку, або розташоване від нього (від лівого або правого краю) не більше ніж на
+            10.</a>
+         <a target="_blank" href="index_copy_9.html">TASK 9. Комп’ютер загадує число від 1 до 10. Двоє користувачів
+            надають свої відповіді. Виграє той, у кого число знаходиться ближче до загаданого комп’ютером числа.</a>
+         <a target="_blank" href="index_copy_10.html">TASK 10. Морський бій (не обов”язкова). Ворожий корабель, може
+            знаходитись в одному із квадратів (кількість квадратів вводиться з клавіатури), які розташовані лінійно
+            (один за одним) на річці.
+            Позиція корабля визначається комп’ютером випадковим чином.
+            Гра відбувається за правилами:
+            1) якщо користувач стріляє у заданий квадрат (тобто вводиться номер квадрата), то корабель потоплено;
+            2) якщо корабель знаходиться у сусідньому по відношенню до квадрата, де знаходиться корабель, то корабель
+            пошкоджено (про це повідомляємо користувача).
+            За два постріли спробувати потопити корабель.
+         </a> -->
+      </div>
+   </wrapper>
+</body>
+
+</html>

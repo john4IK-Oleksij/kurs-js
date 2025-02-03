@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task 10</title>
+</head>
+
+<body>
+   <h3></h3>
+   <h2>Задача 10. </h2>
+   <p>
+      Морський бій (не обов”язкова). Ворожий корабель, може
+      знаходитись в одному із квадратів (кількість квадратів вводиться з клавіатури), які розташовані лінійно
+      (один за одним) на річці.
+      Позиція корабля визначається комп’ютером випадковим чином.
+      Гра відбувається за правилами:
+      1) якщо користувач стріляє у заданий квадрат (тобто вводиться номер квадрата), то корабель потоплено;
+      2) якщо корабель знаходиться у сусідньому по відношенню до квадрата, де знаходиться корабель, то корабель
+      пошкоджено (про це повідомляємо користувача).
+      За два постріли спробувати потопити корабель.
+      <script>
+         // const cellsNum = parseInt(prompt(`Введіть кількість ячейок`))
+         // const shipsPosition = Math.floor(Math.random() * cellsNum) + 1
+         // const hit = shipsPosition === attack
+         // // Перевіряємо, чи постріл влучив або пройшов поряд
+         // if (hit) { //влучив
+         //    document.write(`h3>Вітаю! Корабель знищено </h3>`);
+         // } else //поряд 
+         //    else document.write(`<h3>Ви програли. Корабель вцілів ... </h3>`);//Не трапив 
+         // ==================
+         const cellsNum = parseInt(prompt(`Введіть кількість ячейок:`));
+         const shipsPosition = Math.floor(Math.random()
+            * cellsNum) + 1;
+         const attack1 = parseInt(prompt(`Зроби постріл (Виберіть ячейку (від 1 до ${cellsNum}) де знаходиться корабель)`))
+         const isNear = attack1 === shipsPosition + 1 || attack1 === shipsPosition - 1
+         // Перевіряємо, чи постріл влучив 
+         if (attack1 === shipsPosition) {
+            document.write(`<h3>Вітаю! Корабель знищено з першого пострілу!</h3>`);
+         } else {  // Якщо перший постріл промахнувся, перевіряємо другий постріл
+            if (isNear) {
+               const attack2 = parseInt(prompt(`Корабель пошкоджено. Вибух поряд з кораблем. Зроби другий постріл (від 1 до ${cellsNum})`));
+               if (attack2 === shipsPosition)
+                  document.write(`<h3>Вітаю! Корабель знищено з другого пострілу!</h3>`);
+               else
+                  document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+            }
+            else document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+            if (attack2 === shipsPosition)
+               document.write(`<h3>Вітаю! Корабель знищено з другого пострілу!</h3>`);
+            else
+               document.write(`<h3>Ви програли. Корабель вцілів...</h3>`);
+         }
+      </script>
+
+</body>
+
+</html>
