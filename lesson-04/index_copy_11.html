@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task 11</title>
+</head>
+
+<body>
+   <h3></h3>
+   <h2>Задача 11.</h2>
+   <p>
+      Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+      <script>
+         if (confirm('Почати тестування?')) {
+            let firstInputNum = parseInt(prompt(`Введіть число початкової межі.`))
+            let secondInputNum = parseInt(prompt(`Введіть число кінцевої межі.`))
+            // Міняємо місцями значення, якщо перша межа більша за другу
+            if (firstInputNum > secondInputNum) {
+               let replace = firstInputNum;
+               firstInputNum = secondInputNum;
+               secondInputNum = replace;
+            }
+            let sum = 0;
+            // Лічильник непарних чисел
+            let count = 0
+            while (count < 5) {
+               // генеруємо випадкові числа поки лічильник не нарахує 5 непарних
+               let randSelectComp = firstInputNum + Math.floor(Math.random() * (secondInputNum - firstInputNum + 1))
+               if (randSelectComp % 2 === 1) // Перевірка на непарність
+               {
+                  sum += randSelectComp
+                  count++
+               }
+            }
+            document.write(`<h3>Cума 5 непарних випадкових чисел з межі (${firstInputNum} do ${secondInputNum}) є : ${sum}</h3>`);
+         }
+      </script>
+
+</body>
+
+</html>

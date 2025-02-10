@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-7</title>
+</head>
+
+<body>
+
+   <h2>Задача 7. </h2>
+
+   <p>
+      Вивести на екран N абзаців (N вводиться користувачем)
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         const userNum = parseInt(prompt(`Введіть число абзаців`))
+         let count
+         for (let count = 0; count < userNum; count++) {
+            document.write(`<div class="block">`);
+            document.write(`<p class="text">test</p>`);
+            document.write(`</div>`);
+         }
+      }
+   </script>
+</body>
+
+</html>

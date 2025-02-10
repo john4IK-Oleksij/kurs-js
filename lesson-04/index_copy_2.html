@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-2</title>
+</head>
+
+<body>
+   <h2>Задача 2. </h2>
+   <p>
+      Створити 10 елементів для введення цін продуктів
+   </p>
+   <!-- 1.label окремо для кожного input, щоб покращити доступність.
+   2. обгорнути всі input в div для зручного стилізування.
+   3. type="number", щоб користувачі могли вводити лише числа.
+   4. min="0", щоб уникнути введення від'ємних значень.
+   5. name та id для кожного поля, щоб мати унікальні ідентифікатори. -->
+
+   <!-- <div class="action">
+      <input type="number" name="price1" min="0" placeholder="Ціна 1"><br>
+      <input type="number" name="price2" min="0" placeholder="Ціна 2"><br>
+      <input type="number" name="price3" min="0" placeholder="Ціна 3"><br>
+      <input type="number" name="price4" min="0" placeholder="Ціна 4"><br>
+      <input type="number" name="price5" min="0" placeholder="Ціна 5"><br>
+      <input type="number" name="price6" min="0" placeholder="Ціна 6"><br>
+      <input type="number" name="price7" min="0" placeholder="Ціна 7"><br>
+      <input type="number" name="price8" min="0" placeholder="Ціна 8"><br>
+      <input type="number" name="price9" min="0" placeholder="Ціна 9"><br>
+      <input type="number" name="price10" min="0" placeholder="Ціна 10">
+   </div> -->
+
+
+   <script>
+
+      if (confirm('Почати тестування?')) {
+         document.write(`<div class="action">`);
+         for (let priceNum = 1; priceNum <= 10; priceNum++) {
+            document.write(`<input type="number" name="price1" min="0" placeholder="Ціна ${priceNum}"><br>`);
+         }
+         document.write(`</div>`);
+      }
+
+   </script>
+</body>
+
+</html>

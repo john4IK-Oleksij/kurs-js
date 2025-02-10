@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-09</title>
+</head>
+
+<body>
+   <h2>Задача 9. </h2>
+   <p>
+      Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         let compNum
+         let ident = false
+         while (!ident) {
+            //комп'ютер генерує числа для вгадування
+            compNum = Math.floor(Math.random() * 1000);
+            //Натискання користувачем "ОК" зробить "ident" - істинним. А до тих пір за замовчуванням ми призначаємо "ident" - false .
+            ident = confirm(`Чи це число ${compNum}?`)
+         }
+         document.write(`<h3>Super! Це було число ${compNum}</h3>`)
+      }
+
+   </script>
+</body>
+
+</html>

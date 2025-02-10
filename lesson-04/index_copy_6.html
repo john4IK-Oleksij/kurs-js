@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-6</title>
+</head>
+
+<body>
+   <h2>Задача 6.</h2>
+   <h3></h3>
+   <p>
+      Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`<div class="container">`);
+         for (let tableNum = 0; tableNum < 3; tableNum++) {
+            document.write(`<table>`);
+            for (let rowNum = 0; rowNum < 3; rowNum++) {
+               document.write(`<tr>`);
+               for (let columnNum = 0; columnNum < 3; columnNum++) {
+                  document.write(`<td>test</td>`);
+               }
+               document.write(`</tr>`);
+            }
+            document.write(`</table>`);
+         }
+         document.write(` </div>`);
+      }
+   </script>
+</body>
+
+</html>

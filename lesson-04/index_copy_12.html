@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-12</title>
+</head>
+
+<body>
+
+   <h2>Задача 12. </h2>
+   <p>
+      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з
+      чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три
+      других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору
+      зображення за номером). <span>Додано: виграш за випадаючі два зображення, призові вдвічі менші. Також задіяні 7
+         зображень замість 3.</span>
+   </p>
+
+   <script>
+      // if (confirm(`Почати тестування?`)) {
+      const image1 = `<img src="./img/apple.png" style="width: 150px" alt="image">`
+      const image2 = `<img src="./img/lemon.png" style="width: 150px" alt="image">`
+      const image3 = `<img src="./img/orange.png" style="width: 150px" alt="image">`
+      const image4 = `<img src="./img/pineapple.png" style="width: 150px" alt="image">`
+      const image5 = `<img src="./img/bananas.png" style="width: 150px" alt="image">`
+      const image6 = `<img src="./img/grapes.png" style="width: 150px" alt="image">`
+      const image7 = `<img src="./img/kiwi.png" style="width: 150px" alt="image">`
+      document.write(` <div class="images">`);
+      let slot1, slot2, slot3;
+      let selectImage;
+      // призначення зображень 
+      for (let i = 1; i <= 3; i++) {
+         let randNum = 1 + Math.floor(Math.random() * 7);  // випадкове число від 1 до 7
+         switch (randNum) {
+            case 1:
+               selectImage = image1;
+               break;
+            case 2:
+               selectImage = image2;
+               break;
+            case 3:
+               selectImage = image3;
+               break;
+            case 4:
+               selectImage = image4;
+               break;
+            case 5:
+               selectImage = image5;
+               break;
+            case 6:
+               selectImage = image6;
+               break;
+            case 7:
+               selectImage = image7;
+               break;
+         }
+         // призначення зображення відповідно до слота
+         if (i === 1)
+            slot1 = selectImage;  //зображення для комірки 1
+         if (i === 2)
+            slot2 = selectImage;  //зображення для комірки 2
+         if (i === 3)
+            slot3 = selectImage;  //зображення для комірки 3
+         // Виводимо зображення на екран
+         document.write(selectImage);
+      }
+      let prize = 0;
+      if (slot1 === slot2 && slot2 === slot3) {
+         // Виграш при трьох однакових зображеннях
+         switch (slot1) {
+            case image1: prize = 100;
+               break;
+            case image2: prize = 200;
+               break;
+            case image3: prize = 500;
+               break;
+            case image4: prize = 1000;
+               break;
+            case image5: prize = 1500;
+               break;
+            case image6: prize = 2000;
+               break;
+            case image7: prize = 2500;
+               break;
+         }
+         document.write(`<h3>Вітаємо! Ви виграли ${prize} грн.</h3>`);
+      } else if (slot1 === slot2 || slot2 === slot3 || slot1 === slot3) {
+         // Виграш при двох однакових зображеннях
+         switch (slot1) {
+            case image1: prize = 50;
+               break;
+            case image2: prize = 100;
+               break;
+            case image3: prize = 250;
+               break;
+            case image4: prize = 350;
+               break;
+            case image5: prize = 500;
+               break;
+            case image6: prize = 750;
+               break;
+            case image7: prize = 1000;
+               break;
+         }
+         document.write(`<h3>Вітаємо! Ви виграли ${prize} грн за два однакові зображення.</h3>`);
+      } else {
+         document.write(`<h3>Шкода, спробуйте ще раз!</h3>`);
+      }
+      document.write(`</div>`);
+      // }
+   </script>
+
+   <!-- <script>
+      if (confirm('Почати тестування?')) {
+         const image1 = `<img src="./img/apple.png" style="width: 150px" alt="image">`
+         const image2 = `<img src="./img/lemon.png" style="width: 150px" alt="image">`
+         const image3 = `<img src="./img/orange.png" style="width: 150px" alt="image">`
+         const image4 = `<img src="./img/pineapple.png" style="width: 150px" alt="image">`
+         const image5 = `<img src="./img/bananas.png" style="width: 150px" alt="image">`
+         const image6 = `<img src="./img/grapes.png" style="width: 150px" alt="image">`
+         const image7 = `<img src="./img/kiwi.png" style="width: 150px" alt="image">`
+         document.write(` <div class="images">`);
+         let randNum1 = 1 + Math.floor(Math.random() * 7)
+         switch (randNum1) {
+            case 1:
+               document.write(image1);
+               break;
+            case 2:
+               document.write(image2);
+               break;
+            case 3:
+               document.write(image3);
+               break;
+            case 4:
+               document.write(image4);
+               break;
+            case 5:
+               document.write(image5);
+               break;
+            case 6:
+               document.write(image6);
+               break;
+            case 7:
+               document.write(image7);
+               break;
+            default:
+               break;
+         }
+         let randNum2 = 1 + Math.floor(Math.random() * 7)
+         switch (randNum2) {
+            case 1:
+               document.write(image1);
+               break;
+            case 2:
+               document.write(image2);
+               break;
+            case 3:
+               document.write(image3);
+               break;
+            case 4:
+               document.write(image4);
+               break;
+            case 5:
+               document.write(image5);
+               break;
+            case 6:
+               document.write(image6);
+               break;
+            case 7:
+               document.write(image7);
+               break;
+            default:
+               break;
+         }
+         let randNum3 = 1 + Math.floor(Math.random() * 7)
+         switch (randNum3) {
+            case 1:
+               document.write(image1);
+               break;
+            case 2:
+               document.write(image2);
+               break;
+            case 3:
+               document.write(image3);
+               break;
+            case 4:
+               document.write(image4);
+               break;
+            case 5:
+               document.write(image5);
+               break;
+            case 6:
+               document.write(image6);
+               break;
+            case 7:
+               document.write(image7);
+               break;
+            default:
+               break;
+         }
+         if (randNum1 === randNum2 && randNum2 === randNum3) {
+            // Виграш при трьох однакових зображеннях
+            let prize = 0
+            switch (randNum1) {
+               case 1: prize = 100
+                  break;
+               case 2: prize = 200
+                  break;
+               case 3: prize = 500
+                  break;
+               case 4: prize = 750
+                  break;
+               case 5: prize = 1000;
+                  break;
+               case 6: prize = 1500;
+                  break;
+               case 7: prize = 2000;
+                  break;
+            }
+            document.write(`<h3>Вітаємо! Ви виграли ${prize} грн.</h3>`);
+         } else {
+            // Виграш при двох однакових зображеннях
+            if (randNum1 === randNum2 || randNum2 === randNum3 || randNum1 === randNum3) {
+               let prize = 0
+               switch (randNum1) {
+                  case 1: prize = 50
+                     break;
+                  case 2: prize = 100
+                     break;
+                  case 3: prize = 250
+                     break;
+                  case 4: prize = 350
+                     break;
+                  case 5: prize = 500;
+                     break;
+                  case 6: prize = 750;
+                     break;
+                  case 7: prize = 1000;
+                     break;
+               }
+               document.write(`<h3>Вітаємо! Ви виграли ${prize} грн за два однакові зображення.</h3>`);
+            } else {
+               document.write(`<h3>Шкода, спробуйте ще раз!</h3>`);
+            }
+         }
+         document.write(`</div>`);
+      }
+   </script> -->
+</body>
+
+</html>

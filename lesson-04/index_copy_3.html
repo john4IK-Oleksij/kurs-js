@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-3</title>
+</head>
+
+<body>
+
+   <h2>Задача 3. </h2>
+   <h3></h3>
+   <p>
+      Вивести таблицю з одним рядком і 7 стовпцями.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`<table>`);
+         for (let rowNum = 0; rowNum < 1; rowNum++) {
+            document.write(`<tr>`);
+            for (let columnNum = 0; columnNum < 7; columnNum++) {
+               document.write(`<td>test</td>`);
+            }
+            document.write(`</tr>`);
+         }
+         document.write(`</table>`);
+      }
+   </script>
+</body>
+
+</html>
