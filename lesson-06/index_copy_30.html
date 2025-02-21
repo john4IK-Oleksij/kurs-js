@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-30</title>
+</head>
+
+<body>
+
+   <h2>Задача 30. </h2>
+   <!-- <h3> Спортсмен-лижник в перший день тренування пробіг 10</h3> -->
+   <p>
+      Спортсмен-лижник в перший день тренування пробіг 10
+      км. Кожного наступного дня він збільшував довжину пробігу на P% від довжини пробігу попереднього дня
+      (P – дійсне число, 0 < P < 50). Визначити, після якого дня тренування сумарний пробіг лижника за всі дні
+         перевищить 200 км. Вивести знайдену кількість днів K (ціле) і сумарний пробіг S (дійсне число). </p>
+
+         <script>
+            if (confirm('Почати тестування?')) {
+               let prevDay = 10; // Відстань у перший день
+               let counter = 1; // Лічильник днів (починаємо з 1)
+               let distanceTotal = prevDay; // Загальна відстань (початок з 10 км)
+               const percentDist = parseFloat(prompt(`Введіть число у відсотках (Від 0 до 50 відсотків) на скільки збільшиться відстань`));
+               document.write(`<h3>Спортсмен-лижник в перший день тренування пробіг ${prevDay} км</h3>`);
+               while (distanceTotal <= 200) { //цикл триває поки не перевищено дистанцію в 200 км
+                  let nextDay = prevDay + (prevDay * percentDist / 100); // Відстань за наступний день
+                  distanceTotal += nextDay; // Додаємо до загальної дистанції
+                  prevDay = nextDay; // Оновлюємо значення попереднього дня
+                  // document.write(`<h3>В ${counter + 1} день він пробіг ${nextDay.toFixed(2)} км.</h3>`);
+                  // document.write(`<p>Сумарний пробіг після ${counter + 1} днів: ${distanceTotal.toFixed(2)} км.</p>`);
+                  counter++; // Збільшуємо лічильник днів
+               }
+               // Виводимо підсумкову інформацію
+               document.write(`<h2>Після ${counter} днів тренування сумарний пробіг перевищив 200 км.</h2>`);
+               document.write(`<h3>Загальний пробіг: ${distanceTotal.toFixed(2)} км.</h3>`);
+            }
+         </script>
+
+</body>
+
+</html>

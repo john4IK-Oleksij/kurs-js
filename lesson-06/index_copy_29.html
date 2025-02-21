@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-29</title>
+</head>
+
+<body>
+
+   <h2>Задача 29</h2>
+   <p>
+      Морський бій. Комп’ютер випадковим чином розміщує одиночний корабель на полі R*K. З клавіатури
+      поступово вводяться координати пострілу поки корабель не буде потоплено. Спробуйте відоразити гру
+      графічно.
+   </p>
+
+   <script>
+      if (confirm(`Почати тестування?`)) {
+         const R = parseInt(prompt(`Створюємо поле - Введіть кількість рядків`))
+         const K = parseInt(prompt(`Створюємо поле - Введіть кількість колонок`))
+         const S = parseInt(prompt(`Введи кількість снарядів`))
+         const rowCompNum = 1 + Math.floor(Math.random() * R)
+         const colCompNum = 1 + Math.floor(Math.random() * K)
+         let destroyed = false
+         for (let step = 0; step < S; step++) {
+            let userColNum = parseInt(prompt(`СТРіЛЯЙ! Введи номер колонки`))
+            let userRowNum = parseInt(prompt(`СТРіЛЯЙ! Введи номер рядка `))
+            if (userColNum === colCompNum && userRowNum === rowCompNum) {
+               destroyed = true
+               break
+            }
+            else {
+               if ((S - step - 1) > 0)
+                  alert(` Промах! Залишилось спроб: ${S - step - 1}`);
+            }
+         };
+         if (destroyed) document.write(`<h3>Добра робота! "Москва" потоплено!</h3>`);
+         else document.write(`<h3>Шкода... Корабель втік </h3>`)
+      }
+   </script>
+
+</body>
+
+
+</html>

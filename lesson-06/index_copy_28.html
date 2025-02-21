@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task 28</title>
+</head>
+
+<body>
+   <h3></h3>
+   <h2>Задача 28.</h2>
+   <p>
+      Тир. На полі з 10 клітинок розміщують зайця. За один крок заєць може стрибати на відстань від 0 до 3
+      позицій у будь-якому напрямку. З клавіатури вводиться позиція пострілу. Гра продовжується поки у
+      користувача не закінчаться патрони (кількість вводиться з клавіатури) або не буде влучання. Спробуйте
+      відоbразити гру графічно.
+      <script>
+         if (confirm(`Почати тестування?`)) {
+            const cartridges = parseInt(prompt(`Введи кількість снарядів`));
+            // Позиція зайця від 1 до 10 // Початкова позиція зайця
+            let rabbitPos = 1 + Math.floor(Math.random() * 10);
+            //Межі руху зайця
+            let rabbitStepNum = 1 + Math.floor(Math.random() * 3); // Генеруємо число від 1 до 3
+            if (Math.random() < 0.5) {
+               rabbitStepNum *= -1; // Випадковий напрямок, рух в обидві сторони 
+            }
+            let liquidated = false; // Зайця ліквідовано? NO
+            for (let step = 0; step < cartridges; step++) {
+               // Користувач стріляє
+               let userShotNum = parseInt(prompt(`СТРіЛЯЙ! Введи число (позиція зайця від 1 до 10)`));
+               if (userShotNum === rabbitPos) {
+                  liquidated = true;
+                  break; // Заєць підстрелений
+               } else { // Якщо промах, заєць рухається
+                  rabbitPos += rabbitStepNum;
+                  // Перевірка на межі поля (від 0 до 9)
+                  if (rabbitPos < 1) rabbitPos = 1;
+                  if (rabbitPos > 10) rabbitPos = 10;
+                  alert(`Промах!`);
+               }
+            }
+            if (liquidated) {
+               document.write(`<h3>Добра робота! Зайця підстрелено!</h3>`);
+            } else {
+               document.write(`<h3>Шкода... Скінчились набої..</h3>`);
+            }
+            // позиція зайця після останнього пострілу
+            document.write(`<table><tr>`);
+            //таблиця з 10 комірками
+            for (let columnNum = 1; columnNum <= 10; columnNum++) {
+               if (columnNum === rabbitPos) {
+                  // Місце зайця
+                  document.write(`<td><img class="rabbit" src="/lesson-06/img/rabbit.png" alt="rabbit-image"></td>`);
+               } else {
+                  document.write(`<td></td>`); // Порожні клітинки
+               }
+            }
+            document.write(`</tr></table>`);
+         }
+      </script>
+</body>
+
+</html>

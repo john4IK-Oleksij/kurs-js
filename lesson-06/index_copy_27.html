@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task 27</title>
+</head>
+
+<body>
+   <h3></h3>
+   <h2>Задача 27.</h2>
+   <p>Вивести на екран
+      A B C D E
+      B C D E F
+      C D E F G
+      D E F G H
+      E F G H I </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         // let colNum
+         // let rowNum
+         document.write(`<table>`);
+         for (let rowNum = 0; rowNum < 5; rowNum++) {
+            document.write(`<tr>`); // Починаємо новий рядок
+            for (let colNum = 0; colNum < 5; colNum++) {
+               // Додаємо літеру до рядка
+               let char = String.fromCharCode(65 + rowNum + colNum) + ` `;  // 65 — це ASCII код для літери 'A'
+               document.write(`<td>${char}</td>`); // Виводимо букву в комірку
+            }
+            document.write(`</tr>`); // Закриваємо рядок
+         }
+         document.write(`</table>`); // Закриваємо таблицю
+      }
+   </script>
+
+</body>
+
+</html>
