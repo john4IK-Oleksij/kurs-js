@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-9</title>
+</head>
+
+<body>
+
+   <h2>Задача 9.</h2>
+
+   <p>
+      Створити функцію, яка виводить банер (у функцію
+      передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повинен
+      знаходитись у середині тега a: <a> <img src=”шлях”> </a>
+   </p>
+   <!-- <h4>Пошукова система GOOGLE</h4>
+   <a target="_blank" href="https://www.google.com/">
+      <img class="banner" src="img/google.png" alt="iamge">
+   </a> -->
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         let title = `Пошукова система GOOGLE`
+         let link = `https://www.google.com/`
+         let image = `img/google.png`
+         let getBanner = function (title, link, image) {
+            return `<h4>${title}</h4><br>
+            <a target="_blank" href="${link}">
+            <img class="banner" src="${image}" alt="iamge"></a>`
+         }
+         document.write(getBanner(title, link, image));
+      }
+   </script>
+
+</body>
+
+</html>

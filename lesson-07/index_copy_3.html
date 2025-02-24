@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-3</title>
+</head>
+
+<body>
+
+   <h2>Задача 3.</h2>
+   <p>
+      Створити функцію, яка за номером дня дозволяє з’ясувати
+      чи є цей день робочим.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let numDay = parseInt(prompt(`Уведіть число дня тижня`))
+         function dayStatus(numDay) {
+            let res
+            switch (numDay) {
+               case 1:
+               case 2:
+               case 3:
+               case 4:
+               case 5: res = `робочий день`
+                  break;
+               case 6:
+               case 7: res = `вихідний`
+                  break;
+            }
+            return res
+         }
+         document.write(`<h3>${dayStatus(numDay)}</h3>`);
+      }
+   </script>
+
+</body>
+
+</html>

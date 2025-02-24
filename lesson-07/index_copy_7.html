@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-7</title>
+</head>
+
+<body>
+
+   <h2>Задача 7.</h2>
+
+   <p>
+      Створити функцію, яка створює таблицю з вказаною
+      кількістю рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         function getTable(rowNum, colNum) {
+            document.write(`<table>`);
+            for (let rowCount = 0; rowCount < rowNum; rowCount++) {
+               document.write(`<tr>`);
+               for (let colCount = 0; colCount < colNum; colCount++) {
+                  document.write(`<td>text</td>`);
+               }
+               document.write(`</tr>`);
+            }
+            document.write(`</table>`);
+            return
+         }
+         let rowNum = parseInt(prompt(`Уведіть кількість рядків`))
+         let colNum = parseInt(prompt(`Уведіть кількість стовпців`))
+         getTable(rowNum, colNum)
+      }
+   </script>
+
+</body>
+
+</html>
