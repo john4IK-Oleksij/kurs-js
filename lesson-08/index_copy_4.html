@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-4</title>
+</head>
+
+<body>
+
+   <h2>Задача 4.</h2>
+   <p>
+      Дано масив, який зберігає кількість відвідувачів магазину
+      протягом тижня. Вивести на екран: <br>
+      1. номери днів, протягом яких кількість відвідувачів була меншою за 20; <br>
+      2. номери днів, коли кількість відвідувачів була мінімальною; <br>
+      3. номери днів, коли кількість відвідувачів була максимальна; <br>
+      4. загальну кількість клієнтів у робочі дні та окремо <br>
+      5. загальну кількість відвідувачів на вихідних.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let arrVisitorsPerWeek = [];
+         let sumWeekend = 0
+         let sumWorker = 0
+         for (let i = 1; i <= 7; i++) {
+            let visitors = parseInt(prompt(`Введіть кількість відвідувачів за ${i} день:`))
+            console.log(`${visitors}`);
+            arrVisitorsPerWeek.push(visitors)
+            if (i > 5) {
+               sumWeekend += visitors
+            } else
+               sumWorker += visitors
+         }
+         let arrMinTwenty = []; // Масив для днів, де відвідувачів менше 20
+         for (let i = 0; i < arrVisitorsPerWeek.length; i++) {
+            if (arrVisitorsPerWeek[i] < 20) {
+               arrMinTwenty.push(i + 1);  // Додаємо значення у масив
+            }
+         }
+         let maxVisitors = Math.max(...arrVisitorsPerWeek); //кількість відвідувачів була maksymalna
+         let arrMaxDays = []; // Масив для номерів днів з max відвідувачами
+         for (let i = 0; i < arrVisitorsPerWeek.length; i++) {
+            if (arrVisitorsPerWeek[i] === maxVisitors) {
+               arrMaxDays.push(i + 1); // Додаємо номер дня (раптом мінімальна кількість була ще в якийсь день)
+            }
+         }
+         let minVisitors = Math.min(...arrVisitorsPerWeek); //кількість відвідувачів була мінімальною
+         let arrMinDays = []; // Масив для номерів днів з max відвідувачами
+         for (let i = 0; i < arrVisitorsPerWeek.length; i++) {
+            if (arrVisitorsPerWeek[i] === minVisitors) {
+               arrMinDays.push(i + 1); // Додаємо номер дня (раптом максимальна  кількість була ще в якийсь день)
+            }
+         }
+         document.write(`<h3>кількість відвідувачів була меншою за 20 в день # : 
+         ${arrMinTwenty}</h3>`);
+         document.write(`<h3>мінімальна кількість відвідувачів була в день # : 
+         ${arrMinDays}</h3>`);
+         document.write(`<h3>максимальна кількість відвідувачів була в день # : 
+         ${arrMaxDays}</h3>`);
+         document.write(`<h3>загальнa кількість клієнтів у робочі дні : 
+      ${sumWorker}</h3>`);
+         document.write(`<h3>загальнa кількість відвідувачів на вихідних : 
+      ${sumWeekend}</h3>`);
+      }
+   </script>
+
+</body>
+
+</html>

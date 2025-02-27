@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-3</title>
+</head>
+
+<body>
+
+   <h2>Задача 3.</h2>
+   <p>
+      Дано послідовність оцінок учня. Підрахувати кількість:
+      1) двійок
+      2) кількість хороших оцінок (добре, відмінно);
+      3) кількість оцінок, які нижче середнього.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let rating = [];  // Масив для зберігання оцінок
+         let countUnsattisfactory = 0;  // Лічильник для двійок
+         let countGood = 0;  // Лічильник для хороших оцінок (добре, відмінно)
+         let sum = 0; // Сума всіх оцінок
+         let average //середнє значення оцінок 
+         let count = 0 //кількість оцінок менших за середнє значення
+         let input = true;  // Перемикач для циклу
+         do {
+            let valueRating = parseInt(prompt(`введіть оцінку від 2 до 5`))
+            if (isNaN(valueRating)) {
+               input = false;
+               break
+            }
+            // if (valueRating > 5 || valueRating < 2) {
+            //    alert(`некоректне значення. введіть оцінку від 2 до 5`)
+            //    continue;
+            // }
+            rating.push(valueRating) // Додаємо оцінку до масиву
+            sum += valueRating;  // Додаємо оцінку до загальної суми
+         } while (input)
+         // перестали   вводити отже - обчислюємо
+         average = sum / rating.length; // Обчислюємо середнє значення оцінок
+         console.log(average);
+         console.log(rating);
+         for (let i = 0; i < rating.length; i++) {
+            let value = rating[i];  // Отримуємо поточну оцінку 
+            //  3.Підраховуємо кількість оцінок нижчих за середнє
+            if (value < average) {
+               count++ //3.кількість оцінок, які нижче середнього
+            }
+            switch (value) {
+               case 2:
+                  countUnsattisfactory++ // 1.Підрахувати кількість двійок
+                  break;
+               case 4:
+               case 5:
+                  countGood++
+                  break;
+            }
+         }
+         document.write(`<h3>Кількість двійок : ${countUnsattisfactory}</h3>`);
+         document.write(`<h3>Кількість четвірок i п'ятірок : ${countGood} </h3>`);
+         document.write(`<h3>Кількість оцінок, які нижче середнього : ${count}</h3>`);
+      }
+   </script>
+
+</body>
+
+</html>

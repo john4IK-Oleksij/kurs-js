@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-1</title>
+</head>
+
+<body>
+
+   <h2>Задача 1.</h2>
+
+   <p>
+      Дано одновимірний масив, у якому зберігається певна
+      виграшна сума (елементи заповнюються випадковим чином значеннями від -500 до 500). Надаючи користувачу
+      можливість вибирати номери елементів (поки він не відмовиться). Знаходити сумарний виграш.
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         function getRandomArray(length, min, max) {
+            const arr = [];
+            for (let i = 0; i < length; i++) {
+               const randNum = min + Math.floor(Math.random() * (max - min + 1));
+               arr.push(randNum);
+            }
+            return arr;
+         }
+         const userArr = getRandomArray(29, -500, 500);
+         function selectElements(userArr) {
+            let totalSum = 0;
+            let userSelect = true
+            while (userSelect) {
+               let index = parseInt(prompt(`Виберіть індекс елемента від 0 до ${userArr.length - 1}:`));
+               let selectedValue = userArr[index];
+               totalSum += selectedValue;
+               // console.log(totalSum);
+               userSelect = confirm("Хочете вибрати ще один елемент?");
+            }
+            return totalSum
+         }
+         const result = selectElements(userArr);
+         document.write(`<h3> Ваш виграш ${result} </h3>`);
+      }
+   </script>
+
+</body>
+
+</html>

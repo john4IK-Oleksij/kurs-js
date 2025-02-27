@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-2</title>
+</head>
+
+<body>
+
+   <h2>Задача 2.</h2>
+   <p>
+      Морський бій. Користувач вводить кількість клітинок
+      одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у
+      масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель.
+      Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі
+      кораблі.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let length = parseInt(prompt(`Введіть величину поля:`));
+         let box = parseInt(prompt(`Введіть кількість кораблів:`));
+         let array = [];
+         for (let i = 0; i < length; i++) {
+            array.push(0); // Заповнюємо поле нулями
+         }
+         for (let i = 0; i < box; i++) {
+            let a; // місце для корабля
+            do {
+               a = Math.floor(Math.random() * length);
+            } while (array[a] === 1); // Якщо в цій клітинці вже є корабель, шукаємо нову
+            array[a] = 1; // Розміщуємо корабель , перезаписуємо з 0 на 1
+         }
+         let sunkShips = 0;  // Лічильник потоплених кораблів
+         let shots = 0;  // Лічильник пострілів
+         // Рахуємо потоплені кораблі
+         while (sunkShips < box) {
+            let shot = parseInt(prompt(`Стріляй! Введіть номер клітинки (від 1 до ${length}):`));
+            shots++;  // Збільшуємо лічильник пострілів
+            console.log(`${shots}`);
+            if (array[shot] === 1) {
+               array[shot] = 'X';  // Потоплюємо корабель,записуємо в комірку `X `
+               sunkShips++;  // Збільшуємо кількість потоплених кораблів
+               if (sunkShips < box)
+                  alert(`Ви потопили корабель! Залишилось ${box - sunkShips} кораблів. Стріляйте ще!`);
+            } else {
+               alert('Промах!');
+            }
+         }       // Виводимо результат за допомогою document.write
+         document.write(`<h3>Ви потопили ${sunkShips} кораблів за ${shots} пострілів!</h3>`);
+      }
+   </script>
+
+</body>
+
+</html>

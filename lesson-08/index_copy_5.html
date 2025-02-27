@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Task-5</title>
+</head>
+
+<body>
+
+   <h2>Задача 5.</h2>
+
+   <p>
+      Дано масив, який містить оцінки з К предметів. Знайти
+      середній бал і з’ясувати до якої категорії він відноситься : <br>
+      1.двійочник (має хоча би одну двійку), <br>
+      2.трійочник(є хоча би одна трійка), <br>
+      3.хорошист (оцінки добре і відмінно)<br>
+      4.відмінник
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         let rating = []  // Масив для зберігання оцінок
+         let valueRating //оцінки
+         let sum = 0; // Сума всіх оцінок
+         let average //середнє значення оцінок 
+         let input = true  
+         do {
+            valueRating = parseInt(prompt(`Введіть оцінку від 2 до 5`))
+            console.log(valueRating)
+            if (isNaN(valueRating) || valueRating < 2 || valueRating > 5) {
+               input = false
+            } else {
+               rating.push(valueRating) // Додаємо оцінку до масиву
+               sum += valueRating  // Додаємо оцінку до загальної суми
+            }
+         } while (input)
+         average = (sum / rating.length).toFixed(1) // Обчислюємо середнє значення оцінок
+         console.log(average)
+         console.log(rating)
+         // Перевірка оцінок
+         let isTwo = false
+         let isThree = false
+         let isFour = false
+         let isFive = false
+         for (let i = 0; i < rating.length; i++) {
+            let value = rating[i]
+            if (value === 2) {
+               isTwo = true
+               break;  // Виходимо з циклу, бо це вже достатньо 
+            }
+            if (value === 3) {
+               isThree = true
+            }
+            if (value === 4) {
+               isFour = true
+            }
+            if (value === 5) {
+               isFive = true
+            }
+         }
+         document.write(`<h3>Середній бал учня: ${average}</h3>`)
+         if (isTwo) {
+            document.write(`<h3>Oцінки учня: ${rating}.<br/>Двійочник</h3>`)
+         } else if (isThree) {
+            document.write(`<h3>Oцінки учня: ${rating}.<br/>Трійочник</h3>`)
+         } else if (isFour) {
+            document.write(`<h3>Oцінки учня: ${rating}.<br/>Хорошист (оцінки добре і відмінно)</h3>`)
+         } else if (isFive) {
+            document.write(`<h3>Oцінки учня: ${rating}.<br/>Відмінник</h3>`)
+         }
+      }
+   </script>
+
+</body>
+
+</html>
