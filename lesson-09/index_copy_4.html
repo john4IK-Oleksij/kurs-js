@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task/04</title>
+
+</head>
+
+<body>
+   <h2>Задача 4.</h2>
+   <p>Дано масив елементів. Вивести на екран елементи, що більші
+      за 100
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function cutArr(...value) {
+            let arr = [];
+            for (let element of value) {
+               if (element > 100) {
+                  arr.push(element)
+               }
+            }
+            return arr
+         }
+         let result = cutArr(123, 234, 345, 1, 23, 456, -890, 100, 1, -12, 0.9, 100.7
+
+         )
+         document.write(result);
+      } 
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-08</title>
+
+</head>
+
+<body>
+   <h2>Задача 8.</h2>
+   <p>Дано масив номерів авто. Сформувати новий масив тих, які
+      починаються на «А»</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function auditNum(...value) {
+            const arrNumCars = []
+            // console.log(value);
+            // value.forEach((num) => console.log(num.charCodeAt(0)));
+            value.forEach((num) => {
+               if (num.startsWith(`A`)) {
+                  arrNumCars.push(num)
+               }
+            })
+            return arrNumCars
+         }
+         let result = auditNum("A123BC", "B456CD", "A789EF", "C101GH", "D314KL", "D453UH", "A231KG")
+         document.write(`<h3>${result}</h3>`);
+      }
+   </script>
+</body>
+
+</html>

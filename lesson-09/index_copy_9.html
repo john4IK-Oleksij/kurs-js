@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-08</title>
+
+</head>
+
+<body>
+   <h2>Задача 9.</h2>
+   <p>Дано масив імен. Сформувати масив з перших літер цих
+      імен.</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function namesLetter(...value) {
+            const arrNamesLet = []
+            value.forEach((name) => {
+               arrNamesLet.push(name.charAt(0))
+            })
+            return arrNamesLet
+         }
+         let result = namesLetter("Анна", "Іван", "Марія", "Олександр", "Катерина", "Дмитро", "Петро");
+         document.write(`<h3>${result}</h3>`);
+      }
+   </script>
+</body>
+
+</html>

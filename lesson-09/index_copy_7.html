@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-07</title>
+
+</head>
+
+<body>
+   <h2>Задача 7.</h2>
+   <p>Дано масив цін. Змінити цей масив так, що на ціни товарів,
+      які більші за 1000 грн. дати 30% знижки.</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function priceList(...value) {
+            value.forEach((price, index) => {
+               if (price > 1000) {
+                  value[index] = (price * 0.7).toFixed(2)
+               }
+            })
+            return value
+         }
+         let result = priceList(120, 2340, 345, 1000, 523, 4390, 890, 1001, 513)
+         document.write(result);
+      }
+   </script>
+</body>
+
+</html>

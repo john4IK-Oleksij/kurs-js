@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-06</title>
+
+</head>
+
+<body>
+   <h2>Задача 6.</h2>
+   <p>Дано масив елементів. Усі елементи, які більші за перший
+      елемент помножити на 2</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+
+         function cutArr(...value) {
+            let firstElement = value[0]
+            let arr = value.map((item) => {
+               return item > firstElement ? item * 2 : item
+            });
+            return arr
+         }
+         let result = cutArr(12, 234, -345, 1, 23, 45, -890, 0, 13, -12, 9)
+         document.write(result);
+      } 
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-02</title>
+
+</head>
+
+<body>
+   <h2>Задача 2.</h2>
+   <p>
+      Користувач вводить кількість елементів. Створити масив, у
+      якому перша половина заповнена 1-цями, а друга заповнена 7-ками.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function cutArr(value) {
+            let arr = Array(value);
+            let halfArr = Math.floor(value / 2)
+            for (let i = 0; i <= halfArr; i++) {
+               arr[i] = 1
+            }
+            for (let i = halfArr; i < value; i++) {
+               arr[i] = 7
+            }
+            return arr
+         }
+         let value = parseInt(prompt("Введіть кількість елементів масиву:"));
+         let result = cutArr(value)
+         document.write(result);
+      } 
+   </script>
+</body>
+
+</html>

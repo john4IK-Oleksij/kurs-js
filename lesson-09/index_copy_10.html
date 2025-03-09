@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-10</title>
+
+</head>
+
+<body>
+   <h2>Задача 10.</h2>
+   <p> Дано масив цін у грн. Податок складає 20%. Сформувати
+      масив, який буде містити величину сплаченого податку у грн.</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function prices(...value) {
+            const arrPriceTax = []
+            value.forEach((price) => {
+               arrPriceTax.push((price * 0.2).toFixed(2))
+            })
+            return arrPriceTax
+         }
+         let result = prices(235, 456, 534, 916, 2345, 120);
+         document.write(`<h3>${result}</h3>`);
+      }
+   </script>
+</body>
+
+</html>

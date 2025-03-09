@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-05</title>
+
+</head>
+
+<body>
+   <h2>Задача 5.</h2>
+   <p> Дано масив елементів. Знайти добуток додатних елементів</p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function cutArr(...value) {
+            let arr = [];
+            for (element of value) {
+               if (value[element] > 0) {
+                  arr.push(value[element])
+                  arr[element] = arr[element] * arr[element]
+               }
+            }
+            return arr
+         }
+         let result = cutArr(-123, 234, -345, 1, 23, 45, -890, 0, 10, -12, 9)
+         document.write(result);
+      } 
+   </script>
+</body>
+
+</html>

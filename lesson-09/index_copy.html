@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>lesson-09/task-01</title>
+</head>
+
+<body>
+   <h2>Задача 1. </h2>
+   <p>
+      Користувач вводить кількість елементів. Створити масив, що
+      складається з вказаної кількості елементів заповнених нулями.
+   </p>
+
+   <script>
+      if (confirm('Почати тестування?')) {
+         let value = parseInt(prompt("Введіть кількість елементів масиву:"));
+         let arr = Array(value).fill(0);
+         document.write(arr);
+      }
+   </script>
+</body>
+
+</html>
